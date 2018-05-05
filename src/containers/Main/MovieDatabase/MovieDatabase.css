@@ -1,0 +1,9 @@
+.movieDatabase {
+    width: 100%;
+    height: 100%;
+}
+
+.navBar {
+    z-index: 5;
+    font-size: 30px;
+}

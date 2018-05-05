@@ -1,0 +1,52 @@
+.searchButton button {
+    overflow: visible;
+    position: absolute;
+    top: 4.7%;
+    left:52.8%;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 110px;
+    font: bold 15px/40px 'Raleway', sans-serif;
+    color: #fff;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    border-radius: 0 3px 3px 0;
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+    outline: none;
+    transition: all .3s;
+    z-index: 99;
+}
+
+.searchButton button:hover{
+    background-image: linear-gradient(to top, #0fa8a8b6 0%, #2c075ad0 100%);
+}
+
+.searchButton button:active {
+    background-image: linear-gradient(to top, #0fa8a8b6 0%, #2c075ad0 100%);
+    transform: translateY(1px);
+    outline: none;
+}
+
+.searchButton button:before {
+    content: '';
+    position: absolute;
+    border-width: 8px 8px 8px 0;
+    border-style: solid solid solid none;
+    border-color: transparent #30cfd0 transparent;
+    top: 12px;
+    left: -6px;
+}
+
+.searchButton button:hover:before {
+    border-right-color: #30cfd0;
+}
+
+.searchButton button:focus:before {
+    border-right-color: #30cfd0;
+}
+
+.searchButton button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}

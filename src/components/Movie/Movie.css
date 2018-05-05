@@ -1,0 +1,163 @@
+
+.backdrop {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background-image: linear-gradient(rgba(0,0,0,.85) 15%,rgba(0,0,0,.2) 40%,#000 90%);
+}
+
+.backdrop > img {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.card {
+    z-index: 2;
+    width: 1000px;
+    height: 750px;
+    display: block;
+    position: relative;
+    margin: 3% auto;
+    box-shadow: 13px 11px 36px 6px rgba(0,0,0,0.75);
+    animation-name: cardAnimation;
+    animation-duration: .8s;
+    animation-timing-function: ease-out;
+    
+}
+
+@keyframes cardAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} 
+
+
+.stats {
+    border: 1px solid black;
+    display: inline-block;
+    position: absolute;
+    width: 500px;
+    height:750px;
+    top: 0;
+    left: 50%;
+    z-index: 2;
+    color:white;
+    background-color:rgba(0,0,0,.85) ;
+    border-radius: 0 3px 3px 0;
+    
+}
+
+.image {
+    display: inline-block;
+    position: absolute;
+    width: 500px;
+    height:750px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    border-radius: 4px;
+    
+}
+
+.image > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover; 
+    z-index: 2;
+    border-radius:  3px 0 0 3px;
+}
+
+.title {
+    margin-top: 30px;   
+}
+
+.title > h1 {
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    display: inline-block;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 20px 0 0 0 ;
+}
+
+.overview {
+    margin-top: 50px;
+}
+
+.overview > h2 {
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    display: inline-block;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.overview > p {
+    padding: 20px;
+}
+
+.date {
+    margin-top: 40px;
+}
+
+.date > h2 {
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    display: inline-block;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.vote {
+    margin-top: 40px;
+}
+
+.vote > h2 {
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.add {
+    margin-top: 40px;
+}
+
+
+.add > button {
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    padding: 10px;
+    font-size: 16px;
+    width: 170px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: all .2s;
+    color: white;
+    font-weight: bold;
+}
+
+.add button:hover{
+    background-image: linear-gradient(to top, #0fa8a8b6 0%, #2c075ad0 100%);
+}
+
+.add > button:active {
+    transform: translateY(2px);
+}
+   
+
+
+
+
+
+
+
+

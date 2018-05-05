@@ -1,0 +1,38 @@
+.collections {
+    display: flex;
+    padding-top: 5%;
+    width: 80%;
+    margin: 0 auto;
+    flex-flow: wrap; 
+}
+
+.collection > img {
+    height: 200px;
+    border-radius:3px;  
+    box-shadow: 13px 11px 36px 6px rgba(0,0,0,0.75);   
+}
+
+.collection {
+    margin:10px 25px;
+    transition: all .3s;
+    cursor: pointer;
+    animation-name: collectionAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes collectionAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+.collection:hover {
+    transform: scale(2);
+    z-index: 99;
+}

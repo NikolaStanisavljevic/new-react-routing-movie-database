@@ -1,0 +1,2 @@
+# MovieDatabase React Routing project
+This is single page application  with option to make collection of your  favorite movies. Website is build in HTML/CSS and Javascript using ReactJs framework, and react routing to route between different parts of  React application.Its using themovieDB API in JSON format and its handled using axios. It is still in building process and soon it will be connected to server and be fully responsive.  
