@@ -38,7 +38,6 @@ class Main extends Component {
   state = {
     movies : [],
     movie: [],
-    movieName : '',
     error : false,
     value: '',
     suggestions: [],
@@ -75,12 +74,12 @@ class Main extends Component {
 
   searchMovie = (event) => {
     const newMovie = [];
-    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=${this.state.movieName}&page=1&include_adult=false`)
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=${this.state.value}&page=1&include_adult=false`)
     .then(response=> {
       newMovie.splice(0,1,response.data.results[0]);
       this.setState({
         movie: newMovie,
-        movieName: ''
+        value: ''
       });
     })
     .catch(error => {
@@ -91,13 +90,24 @@ class Main extends Component {
     )
   };
 
-  // Storing user value of input field
+    onSuggestionSelected = (event,{ suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) =>{
+        const newMovie = [];
+        if (method === 'click'){
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=${suggestion}&page=1&include_adult=false`)
+                .then(response=> {
+                    newMovie.splice(0,1,response.data.results[0]);
+                   this.setState({
+                       movie: newMovie,
+                       value: ''
+                   })
+                })
+                .catch(error => {
+                this.setState({
+                    error: true
+                })});
+        }
+    };
 
-  setMovie = (event) => {
-    this.setState({
-      movieName: event.target.value
-    })
-  };
 
     onChange = (event, { newValue }) => {
         this.setState({
@@ -110,10 +120,7 @@ class Main extends Component {
                     return name.title
                 });
                 this.setState({suggestions : moviesName})
-                //  console.log(this.state.suggestions);
             })
-
-
     };
 
     // Autosuggest will call this function every time you need to update suggestions.
@@ -132,14 +139,7 @@ class Main extends Component {
         });
     };
 
-    onSuggestionSelected = (event,{ suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) =>{
-        if (method === 'click'){
-            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=${suggestion}&page=1&include_adult=false`)
-                .then(response=> {
-                    console.log(response);
-                })
-        }
-    };
+
 
   render() {
 
