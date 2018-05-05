@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './MovieDatabase.css';
-import Form from '../../../components/Form/Form';
 import Movie from '../../../components/Movie/Movie';
 import NavBar from '../../../components/Navbar/Navbar';
 import Collection from '../Collection/Collection';
