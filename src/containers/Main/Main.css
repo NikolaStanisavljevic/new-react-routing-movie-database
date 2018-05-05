@@ -1,3 +1,5 @@
+
+
 .react-autosuggest__container {
     width: 330px;
     height: 40px;
@@ -23,6 +25,37 @@
     border-radius: 3px 0 0 3px;
 }
 .react-autosuggest__suggestions-container{
-    width: 219px;
+    width: 220px;
     background: #eee;
+}
+
+.react-autosuggest__suggestions-list {
+    list-style: none;
+    text-align: left;
+    padding-left: 0;
+    padding-top:25px;
+}
+
+.react-autosuggest__suggestion {
+    padding: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    animation-name: suggestAnimation;
+    animation-duration: 1.8s;
+    animation-timing-function: ease-out;
+ }
+
+.react-autosuggest__suggestion:hover {
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    color:white;
+}
+
+
+@keyframes suggestAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
